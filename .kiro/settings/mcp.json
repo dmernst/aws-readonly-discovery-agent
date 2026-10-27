@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "aws-mcp": {
+      "command": "uvx",
+      "timeout": 100000,
+      "transport": "stdio",
+      "args": [
+        "mcp-proxy-for-aws-cli@1.7.0",
+        "https://aws-mcp.us-east-1.api.aws/mcp",
+        "--metadata",
+        "AWS_REGION=us-east-1",
+        "--profile",
+        "mcp-discovery"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "billing-cost-management": {
+      "command": "uvx",
+      "args": [
+        "awslabs.billing-cost-management-mcp-server@0.0.39"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "mcp-discovery",
+        "AWS_REGION": "us-east-1"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
